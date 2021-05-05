@@ -1,0 +1,140 @@
+* {
+  /*remove default styling */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(240deg, yellow, rgb(0, 183, 255));
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.3rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: white;
+  background: linear-gradient(120deg, rgb(32, 21, 179), rgb(0, 183, 255));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: white;
+  color: rgb(0, 183, 255);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.to-do-list {
+  min-width: 30%;
+  list-style: none; /*remove the bullet points in list*/
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  flex: 1; /*make icons align side by side*/
+}
+
+.complete-btn,
+.delete-btn {
+  background: rgb(77, 107, 17);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: linear-gradient(120deg, rgb(32, 21, 179), rgb(0, 183, 255));
+}
+
+/*add margin to the appended li elements*/
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*animation that slowly deletes appended todo item*/
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+/*remove default styles from select element*/
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: rgb(0, 183, 255);
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+  font-weight: bolder;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: linear-gradient(120deg, rgb(32, 21, 179), rgb(0, 183, 255));
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.select:hover::after {
+  background: white;
+  color: rgb(0, 183, 255);
+}
